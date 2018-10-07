@@ -1,0 +1,55 @@
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #calculator{
+        margin: 50px auto;
+        padding: 5px;
+        width: 230px;
+        height: 230px;
+        background: rgb(190,210,224);
+    }
+    #screen{
+        width: 230px;
+        height: 60px;
+        background: rgb(153,153,153);
+        border-radius: 5px;
+        text-align: right;
+        overflow: hidden;
+    }
+    #txt1{
+        height: 20px;
+        padding-top: 10px;
+        font-size: 10px;
+    }
+    #txt2{
+        height: 30px;
+        font-size: 20px;
+    }
+    #num{
+        float:left;
+        width: 130px;
+    }
+    #num input{
+        width: 40px;
+        height: 40px;
+        margin-top: 3px;
+    }
+    #operator{
+        float:right;
+        width: 70px;
+        height: 170px;
+    }
+    #operator input{
+        width: 70px;
+        height: 30px;
+        margin-top: 4px ;
+    }
+    #converter{
+        float:right;
+        width: 70px;
+        height: 170px;
+    }
+
+</style>
