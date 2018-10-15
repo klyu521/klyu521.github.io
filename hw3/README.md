@@ -263,3 +263,12 @@ namespace HW3
         }
     }
 }
+### Merge hw3 and push all files to remote origin
+```
+git checkout hw3
+git add *
+git commit -m "hw3"
+git checkout master
+git merge hw3
+git push -u origin master
+```
