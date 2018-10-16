@@ -16,7 +16,10 @@ public interface IQueueInterface<T>
 	/// </summary>
 	/// <exception cref="Thrown"> if the queue is empty </exception>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 99307213bb713a6758671abdc969dc682d6b86dd
 	T Pop();
 
 	/// <summary>
