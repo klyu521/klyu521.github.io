@@ -264,6 +264,12 @@ namespace HW3
     }
 }
 ```
+
+### Run the program in Command line
+
+![output](image/hw3.png)
+
+
 ### Merge hw3 and push all files to remote origin
 
 ```
