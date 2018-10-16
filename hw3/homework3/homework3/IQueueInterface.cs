@@ -15,8 +15,8 @@ public interface IQueueInterface<T>
 	/// Remove and return the front element.
 	/// </summary>
 	/// <exception cref="Thrown"> if the queue is empty </exception>
-//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-//ORIGINAL LINE: T pop() throws QueueUnderflowException;
+
+
 	T Pop();
 
 	/// <summary>
