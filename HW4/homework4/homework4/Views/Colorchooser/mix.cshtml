@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Mix";
+}
+
+<h2>Mix Color</h2>
+ Enter colors in hexadecimal format: #FF0000
+
+@using (Html.BeginForm("Mix", "Colorchooser", FormMethod.Post))
+{
+    // User input the first color
+    <div class="wrapped">
+        @Html.Label("First Color")
+        @Html.TextBox("firstColor", null, new { @class = "form-control", placeholder = "#FF0000", pattern = "^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" })
+    </div>
+
+    // User input the second color
+    <div class="wrapped">
+        @Html.Label("Second Color")
+        @Html.TextBox("secondColor", null, new { @class = "form-control", placeholder = "#00FF00", pattern = "^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" })
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+    <div class="wrapped">
+        <button type="submit" class="btn btn-primary">Mix Colors</button>
+    </div>
+}
+<br />
+<br />
+<br />
+<br />
+
+
+@*Checks if ViewBag.ColorOne is not null before showing color blocks.
+    Not bothering to check other 2 ViewBag colors since all 3 colors should be assigned together*@
+@if (ViewBag.ColorOne != null)
+{
+    <div class="row">
+        <div class="col-sm-1" style="width:75px; height:75px; @ViewBag.ColorOne; border-style:solid; border-width:1px"></div>
+        <div class="col-sm-1" style="width:45px;"><h3>+</h3></div>
+        <div class="col-sm-1" style="width:75px; height:75px; @ViewBag.ColorTwo; border-style:solid; border-width:1px"></div>
+        <div class="col-sm-1" style="width:45px;"><h3>=</h3></div>
+        <div class="col-sm-1" style="width:75px; height:75px; @ViewBag.ColorThree; border-style:solid; border-width:1px"></div>
+    </div>
+}

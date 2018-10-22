@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Converter";
+}
+
+<h2>Miles Converter</h2>
+
+<form method="get">
+    <label for="num">Miles to Convert</label><br />
+    <input type="number" name="num" value="" /><br /><br />
+    <label for="type">From:</label><br />
+    <input type="radio" name="type" value="aMiles" checked />Miles <br />
+    <input type="radio" name="type" value="bMillimeters" /> Millimeters <br />
+    <input type="radio" name="type" value="cCentieters" /> Centieters <br />
+    <input type="radio" name="type" value="dMeters" /> Meters <br />
+    <input type="radio" name="type" value="eKilometers" /> Kilometers <br /><br />
+    <input type="submit" value="Convert" />
+</form>
+

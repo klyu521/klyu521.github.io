@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="jumbotron">
+    <h1>CS460 Homework 4</h1>
+    
+<p>
+  
+
+    <ul id="homepage-list">
+        <li>
+            <h3>@Html.ActionLink("Page 1: Miles Converter", "Converter", "Converter")</h3>
+        </li>
+        <li>
+            <h3>@Html.ActionLink("Page 2: Username Generator", "Mix", "Colorchooser")</h3>
+        </li>
+    </ul>
+</p>
+    </div>
+<script>
+    $(document).ready(function () {
+        $("#homepage-list > li").hover(function () {
+            $(this).addClass("hovered-list-item");
+        }, function () {
+            $(this).removeClass("hovered-list-item");
+        });
+    });
+</script>

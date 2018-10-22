@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Result";
+}
+
+<h2>Result</h2>
+
+<ul style="list-style:none;">
+    <li style="margin-top:20px;">Miles: @ViewBag.a</li>
+    <li style="margin-top:20px;">Millimeters: @ViewBag.b</li>
+    <li style="margin-top:20px;">Centieters: @ViewBag.c</li>
+    <li style="margin-top:20px;">Meters: @ViewBag.d</li>
+    <li style="margin-top:20px;"> Kilometers: @ViewBag.e</li>
+</ul>
+<br />
+@Html.ActionLink("Try again", "Converter");
