@@ -87,3 +87,100 @@ Then it is Result view, I create a new view and show all the reult of each type.
 @Html.ActionLink("Try again", "Converter");
 ```
 When I finished this part, the most part of Miles Converter has benn done.
+
+
+### Start doing Page 2
+
+Page 2 is about a color chooser, I google how to use the ColorTranslator and convert the color to html format. Then I create a new controller called color chooser, and calcuate the value for the new color. Using ViewBag to assin value of Result.
+```
+public class ColorchooserController : Controller
+    {
+        // GET: Colorchooser
+        
+        public ActionResult Mix()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Mix(string firstColor, string secondColor)
+        {
+           
+            // Convert colors to Color object
+            Color firstRgb = ColorTranslator.FromHtml(firstColor);
+            Color secondRgb = ColorTranslator.FromHtml(secondColor);
+
+            // Define red, grenn, blue to calcuate 
+            int red = LimitValue(firstRgb.R, secondRgb.R);
+            int green =LimitValue(firstRgb.G, secondRgb.G);
+            int blue = LimitValue(firstRgb.B, secondRgb.B);
+
+            // Use values to calculate the result
+            Color newColor = Color.FromArgb(red, green, blue);
+             string Result = ColorTranslator.ToHtml(newColor);
+
+            // Use ViewBag with three colors
+            ViewBag.ColorOne = "background:" + firstColor;
+            ViewBag.ColorTwo = "background:" + secondColor;
+            ViewBag.ColorThree = "background:" + Result;
+
+            return View();
+        }
+ ```
+ Then I start the view part of 'Mix' which is showing the output of the color chooser.
+ ```
+ @if (ViewBag.ColorOne != null)
+{
+    <div class="row">
+        <div class="col-sm-1" style="width:65px; height:75px; @ViewBag.ColorOne; border-style:solid; border-width:1px"></div>
+        <div class="col-sm-1" style="width:45px;"><h3>+</h3></div>
+        <div class="col-sm-1" style="width:65px; height:75px; @ViewBag.ColorTwo; border-style:solid; border-width:1px"></div>
+        <div class="col-sm-1" style="width:45px;"><h3>=</h3></div>
+        <div class="col-sm-1" style="width:65px; height:75px; @ViewBag.ColorThree; border-style:solid; border-width:1px"></div>
+    </div>
+}
+```
+### Create links in homepage.
+```
+    
+<p>
+  
+
+    <ul id="homepage-list">
+        <li>
+            <h3>@Html.ActionLink("Page 1: Miles Converter", "Converter", "Converter")</h3>
+        </li>
+        <li>
+            <h3>@Html.ActionLink("Page 2: Username Generator", "Mix", "Colorchooser")</h3>
+        </li>
+    </ul>
+</p>
+```
+Then I change the Navigation bar for Page 1, Page 2.
+```
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Homepage", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Page1", "Converter", "Converter")</li>
+                    <li>@Html.ActionLink("Page2", "Mix", "Colorchooser")</li>
+                  
+                </ul>
+            </div>
+        </div>
+    </div>
+```
+### Screenpriint of my program.
+
+![output](images/1.png)
+![output](images/2.png)
+![output](images/3.png)
