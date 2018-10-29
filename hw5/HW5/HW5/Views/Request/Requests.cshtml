@@ -3,7 +3,7 @@
  ViewBag.Title = "Requests";
 }
 
-<h1 style="text-align:center; padding-bottom:10px;">Campus Apartments</h1>
+<h1 style="text-align:center; padding-bottom:20px;">Campus Apartments</h1>
 <h4 style="text-align:center;">Your Request Form</h4>
 <br /><br />
 
@@ -15,18 +15,18 @@
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <div class="col-md-6">
+        <div class="col-md-4">
             @Html.LabelFor(model => model.FirstName, "First Name")
             @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
             @Html.LabelFor(model => model.LastName, "Last Name")
             @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             @Html.LabelFor(model => model.PhoneNumber, "Phone Number")
             @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
@@ -36,18 +36,18 @@
 
     <div class="form-group" style="padding-top:100px;">
 
-        <div class="col-md-6">
+        <div class="col-md-4">
             @Html.LabelFor(model => model.ApartmentName, "Apartment Name")
             @Html.EditorFor(model => model.ApartmentName, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.ApartmentName, "", new { @class = "text-danger" })
         </div>
-        <div class="col-md-12">
+        <div class="col-md-4">
             @Html.LabelFor(model => model.Explanation, "Short Explanation of Issue")
             @Html.TextAreaFor(model => model.Explanation,
      new { @cols = "100", @rows = "5", @style = "width:100%; resize:none;"})
             @Html.ValidationMessageFor(model => model.Explanation, "", new { @class = "text-danger" })
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             @Html.LabelFor(model => model.UnitNumber, "Unit Number")
             @Html.EditorFor(model => model.UnitNumber, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.UnitNumber, "", new { @class = "text-danger" })
@@ -57,8 +57,8 @@
 
 
     <div class="form-group">
-        <div class="col-md-6">
-            <input type="submit" value="Submit your Request" class="btn btn-default" style="background-color:#E2E2E2; border:2px solid blue; font-weight: bold; margin-top:-50px;" />
+        <div class="col-md-8">
+            <input type="submit" value="Submit your Request" class="btn btn-default" style="background-color:#E2E2E2; border:2px solid blue; font-weight: bold; margin-top:-30px;" />
         </div>
         <div class="col-md-4">
             <div class="checkbox" style="border: 1px solid blue; background-color:#E2E2E2; padding-left:3px; margin-top:-50px;">
