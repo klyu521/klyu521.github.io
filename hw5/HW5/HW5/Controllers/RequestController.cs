@@ -37,7 +37,7 @@ namespace HW5.Controllers
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
-                //Return the 
+                //Return the requests
                 return View(requests);
             }
         }

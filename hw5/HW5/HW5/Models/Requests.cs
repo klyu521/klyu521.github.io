@@ -35,7 +35,7 @@ namespace HW5.Models
         [Display(Name = "Unit Number")]
         public int UnitNumber { get; set; }
         
-        [Required(ErrorMessage = "Please input an Explanation"), StringLength(80, ErrorMessage = "Input can be less than 80 Characters")] 
+        [Required(ErrorMessage = "Explanation"), StringLength(80, ErrorMessage = "Input can be less than 80 Characters")] 
         public string Explanation { get; set; }
 
         [Required]
