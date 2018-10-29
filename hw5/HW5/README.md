@@ -108,3 +108,166 @@ I find the Web.confign file and use <ConnectionStrings> to connet the database.
          providerName="System.Data.SqlClient"/>
   </connectionStrings>
 ```
+
+### Create the controller and view
+I create a new controller called Request, and use [HttpPost] to post Requests.
+```
+public class RequestController : Controller
+
+        {
+            private RequestsContext db = new RequestsContext();
+
+            // GET: Requests
+            public ActionResult Index()
+            {
+                return View(db.Requests.ToList());
+            }
+
+
+            // GET: Requests
+            public ActionResult Requests()
+            {
+                return View();
+            }
+
+            // POST Requests
+            [HttpPost]
+            public ActionResult Requests(Requests requests)
+            {
+                if (ModelState.IsValid)
+                {
+                //Add new request to the database
+                    db.Requests.Add(requests);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                //Return the requests
+                return View(requests);
+            }
+        }
+    }
+```
+Next I create 2 views, one is the page that user can create a new request form, another is the page of listing all requestes. I use some Razorform helpers to build the form that is used to create the entries in the database.
+```
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.FirstName, "First Name")
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.LastName, "Last Name")
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.PhoneNumber, "Phone Number")
+            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group" style="padding-top:100px;">
+
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.ApartmentName, "Apartment Name")
+            @Html.EditorFor(model => model.ApartmentName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ApartmentName, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-12">
+            @Html.LabelFor(model => model.Explanation, "Short Explanation of Issue")
+            @Html.TextAreaFor(model => model.Explanation,
+     new { @cols = "100", @rows = "5", @style = "width:100%; resize:none;"})
+            @Html.ValidationMessageFor(model => model.Explanation, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.UnitNumber, "Unit Number")
+            @Html.EditorFor(model => model.UnitNumber, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.UnitNumber, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+```
+```
+@model IEnumerable<HW5.Models.Requests>
+
+@{
+    ViewBag.Title = "Requests List";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New a Request", "Requests")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Explanation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Permission)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApartmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Explanation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Permission)
+        </td>
+        
+    </tr>
+}
+
+</table>
+```
+
+### Run the prohect.
+I create the link to my views and fix the Navigation bar.
+![output](image/1.png)
+![output](image/2.png)
+![output](image/3.png)
+
