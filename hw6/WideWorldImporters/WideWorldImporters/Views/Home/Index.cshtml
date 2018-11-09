@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WideWorldImporters.Models.Person>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@* This landing page contains a search bar that allows for an input that searches all strings *@
+
+<h2 style="text-align:center; margin-top:30px; font-family:Calibri">Client Search</h2>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @style = "margin-top:30px;" }))
+{
+    <div class="form-group">
+
+        @Html.TextBox("input", "", new { @class = "form-control", @placeholder = "Search using Name", required = "required", @style = "margin: 0px auto;" })
+        <div style="text-align:center; margin-top:5px;">
+            <button class="btn btn-default" type="submit" style="background-color:#ffd800; color:white; text-align:center;">Search</button>
+        </div>
+    </div>
+}
+
+@if (ViewBag.show)
+{
+    if (Model.Count() == 0)
+    {
+        <h4 style="color:#ff0000;">No matches found with that name.</h4>
+    }
+
+    else
+    {
+        <h4>Names containing the search input:</h4>
+        foreach (var Result in Model)
+        {
+
+            <div style="margin-bottom:6px;">
+                <a class="btn btn-primary btn-md btn-block" href="Home/Details/@Result.PersonID" role="button"> @Result.FullName (@Result.PreferredName) </a>
+            </div>
+        }
+    }
+}
