@@ -170,4 +170,4 @@ The view which can show all the details information.
             <img src="https://via.placeholder.com/160x200?text=Photo" alt="@Model.Person.Photo" />
         </div>
 ```
-Here is my video: [Homework6](https://www.youtube.com/watch?v=xKdQIlU8EWU&feature=youtu.be)
+### Here is my video: [Homework6](https://www.youtube.com/watch?v=xKdQIlU8EWU&feature=youtu.be)
