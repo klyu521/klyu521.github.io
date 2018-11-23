@@ -1,0 +1,33 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 style="text-align:center; margin-top:100px; font-family:Arial">Internet Language Translator</h1>
+
+<style>
+    input {
+        width: 100%;
+        padding: 20px;
+        margin-top: 50px;
+    }
+</style>
+<form>
+    <div class="row">
+        <div class="col-md-6">
+            <input id="InputBox" name="Request" type="text" style="width:500px" class="input-sm" />
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-default" onclick="return clear()" type="submit">Clear</button>
+        </div>
+    </div>
+
+</form>
+
+<div id="Image" class="row" />
+
+@section JavaScripts
+    {
+    <script type="text/javascript" src="~/Scripts/AJAX.js"></script>
+}

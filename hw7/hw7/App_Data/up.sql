@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Logs]
+(
+	[ID]			INT IDENTITY (1,1)	NOT NULL,
+	[IPAddress]		NVARCHAR(40)		NOT NULL,
+	[Keyword]		NVARCHAR(100)		NOT NULL,
+	[AgentString] 	NVARCHAR(256)		NOT NULL,
+	[TimeStamp] 	DATETIME			NOT NULL,
+
+	CONSTRAINT [PK_dbo.Logs] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
