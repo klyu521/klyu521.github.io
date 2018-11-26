@@ -1,6 +1,6 @@
 ﻿var boringWords = ["I", "his", "my", "him", "go", "to", "and", "but", "it",
-                   "me", "we", "of", "those", "you", "she", "he", "that",
-                   "this", "a", "an", "so", "is", "her"];
+                   "me", "we", "of", "those","he", "that",
+                   "this", "an", "so", "us"];
 
 $("#InputBox").bind("keypress", function (e) {
 
