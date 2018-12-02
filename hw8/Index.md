@@ -2,7 +2,7 @@
 
 ### ER Diagram
 
-![ER](images/Blank Diagram.png)
+![Diagram](images/Blank Diagram.png)
 
 ### The video link of this homework 
 [Homework8](https://www.youtube.com/watch?v=F0MRW4guqJg&feature=youtu.be)
