@@ -41,3 +41,6 @@ then select the "Add SQL Server" option.
  ### Deploy Web App to Azure
   Select the App Service, and select From Exisiting.
   ![Rule](9.png)
+
+
+### [Video](https://www.youtube.com/watch?v=Ren0Ekuuug4&feature=youtu.be)
