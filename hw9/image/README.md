@@ -1,7 +1,7 @@
 ### [Repo](https://github.com/klyu521/klyu521.github.io)
 
 
-#### [Video](https://www.youtube.com/watch?v=Ren0Ekuuug4&feature=youtu.be)
+#### [Video LInk](https://www.youtube.com/watch?v=Ren0Ekuuug4&feature=youtu.be)
 
 ### Create a new Resource group
 ![Resource Group](1.png)
