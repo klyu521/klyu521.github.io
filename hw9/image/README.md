@@ -1,5 +1,8 @@
 ### [Repo](https://github.com/klyu521/klyu521.github.io)
 
+
+#### [Video](https://www.youtube.com/watch?v=Ren0Ekuuug4&feature=youtu.be)
+
 ### Create a new Resource group
 ![Resource Group](1.png)
  First I create a new resource group.
@@ -42,5 +45,3 @@ then select the "Add SQL Server" option.
   Select the App Service, and select From Exisiting.
   ![Rule](9.png)
 
-
-###### [Video](https://www.youtube.com/watch?v=Ren0Ekuuug4&feature=youtu.be)
